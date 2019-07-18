@@ -3,5 +3,5 @@ A collection of graphs I've collected from various blogs and tutorials. Most of 
 
 ## R Projects
 1. Cannabis leaf, with the formula to generate it.
-2. Hyperbolic paraboloid, or more familiar as a Pringle chip.
-3. Pulsar data for PSR B1919+21. More familiar as the album cover of Joy Division's Unknown Pleasures.
+1. Hyperbolic paraboloid, or more familiar as a Pringle chip.
+1. Pulsar data for PSR B1919+21. More familiar as the album cover of Joy Division's Unknown Pleasures.
