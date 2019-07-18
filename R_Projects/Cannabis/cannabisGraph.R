@@ -4,12 +4,12 @@ library(tidyverse)
 
 cannabis <- tibble(
   t = seq(-pi,pi, length.out=1000),
-  r1 = (1+.9*cos(8*t)), ## this will draw 8 petals  ## this number determines number of leafs!
+  r1 = (1+.9*cos(8*t)), ## this number determines number of leafs!
   r2 = r1 * (1+.1*cos(24*t)), ## this make it pointy
   r3 = r2 * (.9+0.5*cos(200*t)), ## this makes it jaggy
-  r4 = r3 * (1+sin(t)), ## Hmm.. I think I want to rorate it 90 degree... 
-  r4_alt = r3 * (1+sin(t-pi/2)), ## one way to do it...
-  r = (1+.9*cos(8*t)) * (1+.1*cos(24*t)) * (.9+0.5*cos(200*t)) * (1+sin(t))  ## Put all inline!
+  r4 = r3 * (1+sin(t)), ## Rotate it 90 degrees
+  r4_alt = r3 * (1+sin(t-pi/2)),
+  r = (1+.9*cos(8*t)) * (1+.1*cos(24*t)) * (.9+0.5*cos(200*t)) * (1+sin(t))
 ) 
 
 # this plots the individual rn variables declared in the tibble above
@@ -62,4 +62,4 @@ cannabis %>%
                                     colour = "black"))+
   geom_polygon(fill="#499b4a", color="#74Ba71", size=0.1) +
   coord_polar(theta="x", start=pi/2) +
-  labs(title = "r = (1+.9*cos(8*t)) * (1+.1*cos(24*t)) * (.9+0.5*cos(200*t)) * (1+sin(t))")
+  labs(title = "Cannabis Leaf\n\nr = (1+.9*cos(8*t)) * (1+.1*cos(24*t)) * (.9+0.5*cos(200*t)) * (1+sin(t))\n")

@@ -37,7 +37,7 @@ pulsar <- read.csv(CSV_URL, header = FALSE) %>%
     col = sub("^V", "", col) %>% as.integer()
   )
 
-# Plot baby plot
+# Plot, baby! Plot!
 ggplot(pulsar, aes(x = col, y = row, height = height, group = row)) +
   geom_ridgeline(min_height = min(pulsar$height),
                  scale= 0.2,
