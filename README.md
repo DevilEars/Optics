@@ -1,4 +1,4 @@
-	# Optics
+# Optics
 A collection of graphs I've collected from various blogs and tutorials. Most of them had to be debugged or updated to run and I had fun with that so I wanted to preserve it. Plus, it looks purdy.
 
 ## R Projects
