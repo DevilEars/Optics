@@ -432,5 +432,4 @@ More information about this dashboard (and how to replicate it for your own coun
 The data is as of `r format(max(coronavirus$date), "%A %B %d, %Y")` and the dashboard has been updated on `r format(Sys.time(), "%A %B %d, %Y")`.
 
 
-
-*Go back to [www.statsandr.com](https://www.statsandr.com/) (blog) or [www.antoinesoetewey.com](https://www.antoinesoetewey.com/) (personal website)*.
+*Based on a tutorial from [www.statsandr.com](https://www.statsandr.com/)*.
