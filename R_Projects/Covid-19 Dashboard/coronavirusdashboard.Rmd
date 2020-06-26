@@ -62,7 +62,6 @@ df_daily <- coronavirus %>%
   ) %>%
   dplyr::arrange(date) %>%
   dplyr::ungroup() %>%
-  #dplyr::mutate(active = confirmed - death - recovered) %>%
   dplyr::mutate(active = confirmed - death) %>%
   dplyr::mutate(
     confirmed_cum = cumsum(confirmed),
@@ -136,14 +135,12 @@ Row
 plotly::plot_ly(data = df_daily) %>%
   plotly::add_trace(
     x = ~date,
-    # y = ~active_cum,
     y = ~confirmed_cum,
     type = "scatter",
     mode = "lines+markers",
-    # name = "Active",
     name = "Confirmed",
-    line = list(color = active_color),
-    marker = list(color = active_color)
+    line = list(color = confirmed_color),
+    marker = list(color = confirmed_color)
   ) %>%
   plotly::add_trace(
     x = ~date,
@@ -154,8 +151,18 @@ plotly::plot_ly(data = df_daily) %>%
     line = list(color = death_color),
     marker = list(color = death_color)
   ) %>%
+  plotly::add_trace(
+    x = ~date,
+    y = ~recovered_cum,
+    type = "scatter",
+    mode = "lines+markers",
+    name = "Recovered",
+    line = list(color = recovered_color),
+    marker = list(color = recovered_color)
+  ) %>%
+  
   plotly::add_annotations(
-    x = as.Date("2020-02-04"),
+    x = as.Date("2020-03-05"),
     y = 1,
     text = paste("First case"),
     xref = "x",
@@ -168,7 +175,7 @@ plotly::plot_ly(data = df_daily) %>%
     ay = -90
   ) %>%
   plotly::add_annotations(
-    x = as.Date("2020-03-11"),
+    x = as.Date("2020-03-27"),
     y = 3,
     text = paste("First death"),
     xref = "x",
@@ -181,7 +188,7 @@ plotly::plot_ly(data = df_daily) %>%
     ay = -90
   ) %>%
   plotly::add_annotations(
-    x = as.Date("2020-03-18"),
+    x = as.Date("2020-03-27"),
     y = 14,
     text = paste(
       "Lockdown"
@@ -252,25 +259,34 @@ daily_confirmed %>%
   # ) %>%
   plotly::add_trace(
     x = ~date,
-    y = ~Italy,
+    y = ~Botswana,
     type = "scatter",
     mode = "lines+markers",
-    name = "Italy"
+    name = "Botswana"
   ) %>%
   plotly::add_trace(
     x = ~date,
-    y = ~Germany,
+    y = ~Namibia,
     type = "scatter",
     mode = "lines+markers",
-    name = "Germany"
+    name = "Namibia"
   ) %>%
   plotly::add_trace(
     x = ~date,
-    y = ~Netherlands,
+    y = ~Mozambique,
     type = "scatter",
     mode = "lines+markers",
-    name = "Netherlands"
+    name = "Mozambique"
   ) %>%
+  # They claim to have Lesotho data, but apparently not dailies
+  # plotly::add_trace(
+  #   x = ~date,
+  #   y = ~Lesotho,
+  #   type = "scatter",
+  #   mode = "lines+markers",
+  #   name = "Lesotho"
+  # ) %>%
+  
   plotly::layout(
     title = "",
     legend = list(x = 0.1, y = 0.9),
