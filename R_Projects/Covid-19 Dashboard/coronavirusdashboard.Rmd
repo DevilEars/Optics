@@ -5,7 +5,6 @@ date: "25/06/2020"
 output: 
   flexdashboard::flex_dashboard:
     orientation: rows
-    # social: ["facebook", "twitter", "linkedin"]
     source_code: embed
     vertical_layout: fill 
 ---
@@ -16,18 +15,18 @@ library(flexdashboard)
 # install.packages("devtools")
 # devtools::install_github("RamiKrispin/coronavirus", force = TRUE)
 library(coronavirus)
-data(coronavirus)
-# View(coronavirus)
-# max(coronavirus$date)
+#data(coronavirus)
+#View(coronavirus)
+#max(coronavirus$date)
 
 `%>%` <- magrittr::`%>%`
 #------------------ Parameters ------------------
 # Set colors
 # https://www.w3.org/TR/css-color-3/#svg-color
-confirmed_color <- "purple"
 active_color <- "#1f77b4"
 recovered_color <- "forestgreen"
-death_color <- "red"
+confirmed_color <- "orange"
+death_color <- "tomato"
 fatherland = "South Africa"
 #------------------ Data ------------------
 df <- coronavirus %>%
@@ -91,20 +90,6 @@ valueBox(
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### death {.value-box}
 
 ```{r}
@@ -115,11 +100,27 @@ valueBox(
     "%)",
     sep = ""
   ),
-  caption = "Death cases (death rate)",
-  icon = "fas fa-heart-broken",
+  caption = "Deaths (case fatality rate)",
+  icon = "fas fa-heart-broken-md",
   color = death_color
 )
 ```
+
+### recovered
+```{r}
+
+valueBox(
+  value = paste(format(sum(df$death, na.rm = TRUE), big.mark = ","), " (",
+    round(100 * sum(df$death, na.rm = TRUE) / sum(df$confirmed), 1),
+    "%)",
+    sep = ""
+  ),
+  caption = "Recovered)",
+  #icon = "fas fa-heart-broken",
+  color = recovered_color
+)
+```
+
 
 
 Row
