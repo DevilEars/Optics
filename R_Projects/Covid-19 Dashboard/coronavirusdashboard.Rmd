@@ -202,6 +202,13 @@ plotly::plot_ly(data = df_daily) %>%
     ax = -10,
     ay = -90
   ) %>%
+  
+  # this works to disable the plotly toolbar, but then users can't zoom out again
+  # known issue in plotly, see https://github.com/ropensci/plotly/issues/717
+  # plotly::config(
+  #   displayModeBar = FALSE
+  # ) %>%
+  
   plotly::layout(
     title = "",
     yaxis = list(title = "Cumulative number of cases"),
@@ -304,6 +311,8 @@ daily_confirmed %>%
       pad = 2
     )
   )
+
+
 ```
  
 ### **Cases distribution by type**
