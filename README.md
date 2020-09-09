@@ -3,6 +3,11 @@ A collection of graphs I've collected from various blogs and tutorials. Most of 
 
 ## R Projects
 1. [Cannabis leaf](https://github.com/DevilEars/Optics/tree/master/R_Projects/Cannabis), with the formula to generate it.
-1. [Covid-19 Dashboard](https://rpubs.com/devilears/covid-19-mzansi), a dashbord in R Markdown that tracks the most famous Coronavirus in Mzansi	
+1. [Covid-19 Dashboard](https://rpubs.com/devilears/covid-19-mzansi), a dashboard in R Markdown that tracks the most famous Coronavirus in Mzansi.
 1. [Hyperbolic paraboloid](https://github.com/DevilEars/Optics/tree/master/R_Projects/Pringle), or more familiar as a Pringle chip.
+1. [Mzansi SIR model](https://github.com/DevilEars/Optics/tree/master/R_Projects/MzansiSIR), which models Covid-19 using the standard SIR epidemiological model for South Africa.
 1. [Pulsar data for PSR B1919+21](https://github.com/DevilEars/Optics/tree/master/R_Projects/Pulsar). More familiar as the album cover of Joy Division's Unknown Pleasures.
+
+## Graphs One-pager
+To view all the graphs together on one page, see:
++. [R Projects Graphs](./GraphsOnePager.md)
