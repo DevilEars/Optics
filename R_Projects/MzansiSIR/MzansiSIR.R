@@ -26,22 +26,14 @@ interval = 0.05
 # I = Infected
 # R = Recovered, or RIP
 
-# SIR = function(time, state, parameters){
-#     par = as.list(c(state, parameters))
-#     with(par, {
-#         # Susceptible individuals decrease as infection spreads
-#         # at rate beta
-#         dS = -beta * I * S / N
-#         # Infected individuals increase at rate beta that the 
-#         # infected have contact with Susceptible
-#         # minus the previously Infected people who recover at rate gamma
-#         dI = beta * I * S / N - gamma * I
-#         # recovered individuals increases at the recovery rate of 
-#         # infected individuals
-#         dR = gamma * I
-#         list(c(dS, dI, dR))
-#     })
-# }
+
+# Susceptible individuals decrease as infection spreads at rate beta
+
+# Infected individuals increase at rate beta that the infected have 
+# contact with Susceptible minus the previously Infected people who 
+# recover at rate gamma
+
+# Recovered individuals increase at the recovery rate gamma of infected
 
 SIR <- function(time, state, parameters) {
     par <- as.list(c(state, parameters))
@@ -55,6 +47,7 @@ SIR <- function(time, state, parameters) {
 
 #doing black magic, see
 # https://www.rdocumentation.org/packages/magrittr/versions/1.5
+# kinda pointless IMO
 `%>%` <- magrittr::`%>%`
 
 
@@ -99,12 +92,6 @@ init = c(
 # optimised for the best fit to the incidence data
 
 # ode is the ordinary differential equation solver
-# RSS = function(parameters) {
-#     names(parameters) = c("beta", "gamma")
-#     out = ode(y = init, times = Day, func = SIR, parms = parameters)
-#     fit = out[, 3]# I love magic numbers, don't you?
-#     sum((Infected - fit)^2)#this is a sum of squares so OK
-# }
 
 RSS <- function(parameters) {
     names(parameters) <- c("beta", "gamma")
