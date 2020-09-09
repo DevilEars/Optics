@@ -9,5 +9,4 @@ A collection of graphs I've collected from various blogs and tutorials. Most of 
 1. [Pulsar data for PSR B1919+21](https://github.com/DevilEars/Optics/tree/master/R_Projects/Pulsar). More familiar as the album cover of Joy Division's Unknown Pleasures.
 
 ## Graphs One-pager
-To view all the graphs together on one page, see:
-+. [R Projects Graphs](./GraphsOnePager.md)
+To view all the graphs together on one page, see [R Projects Graphs](./GraphsOnePager.md).
